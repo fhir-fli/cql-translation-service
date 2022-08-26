@@ -3,7 +3,6 @@ package org.mitre.bonnie.cqlTranslationServer;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -192,11 +191,10 @@ public class TranslationResourceTest {
     assertEquals(2, annotations.size());
     JsonObject errorAnnotation = annotations.getJsonObject(1);
     assertEquals("CqlToElmError", errorAnnotation.getString("type"));
-    assertEquals("include", errorAnnotation.getString("errorType"));
+    assertEquals("semantic", errorAnnotation.getString("errorType"));
     assertEquals(5, errorAnnotation.getInt("startLine"));
     assertEquals(1, errorAnnotation.getInt("startChar"));
-    assertEquals("CMSAll", errorAnnotation.getString("targetIncludeLibraryId"));
-    assertEquals("1", errorAnnotation.getString("targetIncludeLibraryVersionId"));
+    assertEquals("Could not load source for library CMSAll, version 1.", errorAnnotation.getString("message"));
   }
 
   @Test
@@ -417,7 +415,7 @@ public class TranslationResourceTest {
     }
 
     @Override
-    public Iterator getPrefixes(String uri) {
+    public Iterator<String> getPrefixes(String uri) {
       throw new UnsupportedOperationException();
     }
   }
