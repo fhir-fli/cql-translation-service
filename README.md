@@ -283,7 +283,7 @@ To build your own image for your current architecture:
 
 To build your own image for multiple architectures (e.g., Intel and Mac M1):
 
-  docker buildx build --platform linux/amd64,linux/arm64 -t cqframework/cql-translation-service:latest . # but use your your own repo and tag strings!
+	docker buildx build --platform linux/amd64,linux/arm64 -t cqframework/cql-translation-service:latest . # but use your your own repo and tag strings!
 
 Note that Docker doesn't support loading multi-platform builds locally, so the above multi-platform build commmand is only helpful when used with `--push`. See: [https://github.com/docker/buildx/issues/59](https://github.com/docker/buildx/issues/59).
 
