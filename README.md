@@ -1,3 +1,12 @@
+# Quick GCP Build
+
+- Please look at the [original repo](https://github.com/cqframework/cql-translation-service) for all of the actual work. 
+- This repo is just to make it easy if you want to setup a microservice on GCP.
+- Clone this repo ```git clone https://github.com/fhir-fli/cql-translation-service.git``` 
+- Make a copy of the [build_cql_translation_service_example.sh](build_cql_translation_service_example.sh) file or just edit it directly. 
+- Change the variables at the top to meet your GCP setup
+- Run ```./build_cql_translation_service_example.sh``` or whatever you renamed your file
+
 # CQL to ELM Translation Service
 
 A microservice wrapper for the CQL to ELM conversion library and CQL formatter.

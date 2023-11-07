@@ -5,3 +5,5 @@
 /.classpath
 /.project
 .DS_Store
+
+build_cql_translation_service.sh
