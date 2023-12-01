@@ -6,7 +6,7 @@
   <groupId>org.mitre.bonnie</groupId>
   <artifactId>cqlTranslationServer</artifactId>
   <packaging>jar</packaging>
-  <version>2.2.0</version>
+  <version>2.3.0</version>
   <name>cqlTranslationServer</name>
 
   <repositories>
@@ -112,6 +112,15 @@
       <artifactId>commons-cli</artifactId>
       <version>1.6.0</version>
     </dependency>
+    <!--
+      We now need to supply our own xpp3 implementation. Use the same one as is used here:
+      https://github.com/cqframework/clinical_quality_language/blob/master/Src/java/buildSrc/src/main/groovy/cql.fhir-conventions.gradle
+    -->
+    <dependency>
+      <groupId>org.ogce</groupId>
+      <artifactId>xpp3</artifactId>
+      <version>1.1.6</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -175,7 +184,7 @@
   </build>
 
   <properties>
-    <cql.version>2.11.0</cql.version>
+    <cql.version>3.3.2</cql.version>
     <jersey.version>2.41</jersey.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
